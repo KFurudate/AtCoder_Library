@@ -1,15 +1,13 @@
-def factrize(num):
-    factor = {}
-    div = 2
-    s = int(num**0.5)+1
-    while div < s:
-        div_cnt = 0
-        while num % div == 0:
-            div_cnt += 1
-            num //= div
-        if div_cnt != 0:
-            factor[div] = div_cnt
-        div += 1
-    if num > 1:
-        factor[num] = 1
-    return factor
+from collections import Counter
+
+def prime_fact(num):
+    prime = []
+    for i in range(2, int(num ** 0.5) + 1):
+        while num % i == 0:
+            prime.append(i)
+            num //= i
+    if num != 1:
+        prime.append(num)
+    return prime
+
+div_cnt = Counter(prime_fact(num))
