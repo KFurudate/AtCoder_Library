@@ -6,7 +6,7 @@ AB = [list(map(int, input().split())) for _ in range(n)]
 
 def dfs(v, p = -1):
 	# v から行ける各頂点uを調べる。
-    for u in to[v]:
+	for u in to[v]:
         if u == p: continue　
         dfs(u, v)　# uが探索済でないなら、再起で探索する。
 
